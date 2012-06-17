@@ -1,9 +1,0 @@
-This project aims at testing the Ext JS 4 framework library
-
-Download http://cdn.sencha.io/ext-4.0.7-gpl.zip
-
-Extract to static/extjs
-
-Server uses tornado-web 2.2
-
-https://github.com/downloads/facebook/tornado/tornado-2.2.tar.gz
