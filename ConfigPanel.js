@@ -51,6 +51,23 @@ Ext.define('ConfigPanel',
         },
         {
             xtype: 'button',
+            text: 'show closed_assignation.',
+            handler: function() {
+                if(!this.up('').win3)
+                {
+                    this.up('').win3 = Ext.create('ticket_helpdesk_closed_assignation');
+                }
+                if (this.up('').win3.isVisible())
+                {   
+                    this.up('').win3.hide();
+                }else{
+                    this.up('').win3.show(document.body);
+                }
+
+            }
+        },
+        {
+            xtype: 'button',
             text: 'Show tickets',
             handler: function(){
                 if(!this.up('').tickets)
@@ -71,9 +88,12 @@ Ext.define('ConfigPanel',
             }
         }
     ],
-    constuctor: function(){
+    initComponent: function(){
+	this.callParent();
         this.win1 = null;
         this.win2 = null;
+	    var MyButton = Ext.create('MyButtons', 'MyWindow1', 'opened_assignation');
+	    this.add(MyButton);
         this.tickets = null;
     }
 });
